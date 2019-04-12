@@ -1,13 +1,10 @@
 import boto3
 
-#table_name, details
+
 def insert_into_table(suggestion, message, request_number):
     dynamodb = boto3.resource("dynamodb", region_name='us-east-1')
 
     table = dynamodb.Table('diningBotSuggestions')
-
-    title = "The Big New Movie"
-    year = 2015
 
     response = table.put_item(
         Item={
